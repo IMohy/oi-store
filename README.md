@@ -57,3 +57,90 @@ OI-Store is a full-featured e-commerce platform built with React, Firebase, and 
   - Vite
   - ESLint
   - Jest for testing
+
+## Getting Started
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/OI-Store.git
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Configure Firebase:**
+
+   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com)
+   - Enable Authentication, Firestore, and Storage
+   - Add your Firebase configuration to `.env`:
+
+   ```bash
+   VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   VITE_FIREBASE_PROJECT_ID=your_project_id
+   VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   VITE_FIREBASE_MSG_SENDER_ID=your_sender_id
+   VITE_FIREBASE_APP_ID=your_app_id
+   ```
+
+4. **Development:**
+
+   ```bash
+   pnpm run dev # Start development server
+   pnpm run build # Build for production
+   pnpm run serve # Preview production build
+   pnpm test # Run tests
+   ```
+
+## Project Structure
+
+```
+src/
+├── components/    # Reusable UI components
+├── hooks/         # Custom React hooks
+├── images/        # Static images
+├── redux/         # Redux store configuration
+├── services/      # Firebase and API services
+├── styles/        # SCSS stylesheets
+├── views/         # Page components
+├── App.jsx        # Root component
+└── index.jsx      # Application entry point
+```
+
+## Firebase Rules
+
+### Storage Rules
+
+```
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if request.auth!=null;
+    }
+  }
+}
+```
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## Support
+
+For support, email mohamedmohamed1999@gmail.com 
