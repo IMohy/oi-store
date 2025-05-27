@@ -1,5 +1,6 @@
 import * as Route from "@/constants/routes";
-import logo from "@/images/logo-full.png";
+import logoWordmark from "@/images/logo-wordmark.png";
+import ObourLogo from "@/images/obour-logo.png";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
@@ -16,7 +17,8 @@ const Footer = () => {
             Developed by
             <br />
             Mohamed Mohy & Mohamed Hamada <br />
-            Eyad Gamal & Mostafa Ayman
+            Eyad Gamal & Mostafa Ayman & Hussain Ahmed<br />
+            Abderahim Adnan
           </span>
         </strong>
       </div>
@@ -24,7 +26,7 @@ const Footer = () => {
         <img
           alt="Footer logo"
           className="footer-logo"
-          src="/src/images/logo-full.png"
+          src={logoWordmark}
           width={60}
           height={60}
           style={{
@@ -42,7 +44,7 @@ const Footer = () => {
       </div>
       <div className="footer-col-3">
         <img
-          src="/src/images/obour-logo.png"
+          src={ObourLogo}
           alt="Footer logo"
           className="footer-logo"
           width={60}
