@@ -35,13 +35,12 @@ const Home = () => {
               <strong>Clarity</strong>
             </h1>
             <p>
-              iPhone 14 Pro takes a huge leap forward, bringing incredible speed to everything you do and dramatic new
-              photo and video capabilities — all in two great sizes.
+              iPhone 14 منتج جديد من شركة آبل يحتوي على العديد من المزايا الجديدة والمتطورة والعظيمة والعديد من المميزات
             </p>
             <br />
             <Link to={SHOP} className="button">
               <ArrowRightOutlined style={{ transform: "rotate(180deg)" }} />
-              &nbsp;   تسوق الآن 
+              &nbsp; تسوق الآن
             </Link>
           </div>
           <div className="banner-img">

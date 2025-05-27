@@ -106,7 +106,7 @@ class Firebase {
 
   getProducts = (lastRefKey) => {
     let didTimeout = false;
-
+    console.log({ lastRefKey });
     return new Promise((resolve, reject) => {
       (async () => {
         if (lastRefKey) {

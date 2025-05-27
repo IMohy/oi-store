@@ -22,12 +22,15 @@ const root = document.getElementById('app');
 render(<Preloader />, root);
 
 firebase.auth.onAuthStateChanged((user) => {
+  console.log('Auth state changed:', user ? 'User is signed in' : 'No user');
   if (user) {
     store.dispatch(onAuthStateSuccess(user));
   } else {
     store.dispatch(onAuthStateFail('Failed to authenticate'));
   }
   render(<App store={store} persistor={persistor} />, root);
+}, (error) => {
+  console.error('Auth state change error:', error);
 });
 
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {

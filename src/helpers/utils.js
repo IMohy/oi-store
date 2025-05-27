@@ -16,13 +16,18 @@ export const displayDate = (timestamp) => {
 };
 
 export const displayMoney = (n) => {
+  // Convert input to number and handle invalid inputs
+  const num = Number(n);
+  if (isNaN(num)) return '0.00';
+
   const format = new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'EGP'
+    currency: 'EGP',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
   });
 
-  // or use toLocaleString()
-  return format.format(n);
+  return format.format(num);
 };
 
 export const calculateTotal = (arr) => {

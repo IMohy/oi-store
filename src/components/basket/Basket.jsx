@@ -16,6 +16,7 @@ const Basket = () => {
     basket: state.basket,
     user: state.auth
   }));
+  console.log({ basket });
   const history = useHistory();
   const { pathname } = useLocation();
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const Basket = () => {
     if (didMount && firebase.auth.currentUser && basket.length !== 0) {
       firebase.saveBasketItems(basket, firebase.auth.currentUser.uid)
         .then(() => {
-          console.log('Item saved to basket');
+          console.log('تم حفظ العنصر في سلة التسوق');
         })
         .catch((e) => {
           console.log(e);
